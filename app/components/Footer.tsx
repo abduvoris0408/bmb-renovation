@@ -22,28 +22,28 @@ export default function Footer() {
 					</h1>
 				</div>
 				<div className='flex flex-col md:flex-row justify-between items-center mb-8'>
-					<nav className='flex gap-6'>
+					<nav className='flex flex-col md:flex-row py-5 items-center gap-6'>
 						<Link
 							href='/'
-							className='text-[#758195] hover:text-[#1d1f1c] transition-colors'
+							className='text-[#1d1f1c] hover:text-[#758195] transition-colors'
 						>
 							Home
 						</Link>
 						<Link
 							href='/about'
-							className='text-[#758195] hover:text-[#1d1f1c] transition-colors'
+							className='text-[#1d1f1c] hover:text-[#758195] transition-colors'
 						>
 							About
 						</Link>
 						<Link
 							href='/services'
-							className='text-[#758195] hover:text-[#1d1f1c] transition-colors'
+							className='text-[#1d1f1c] hover:text-[#758195] transition-colors'
 						>
 							Services
 						</Link>
 						<Link
 							href='/testimonials'
-							className='text-[#758195] hover:text-[#1d1f1c] transition-colors'
+							className='text-[#1d1f1c] hover:text-[#758195]transition-colors'
 						>
 							Testimonials
 						</Link>
