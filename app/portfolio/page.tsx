@@ -1,5 +1,4 @@
 import { Compare } from '@/components/ui/compare'
-import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -8,18 +7,9 @@ export default function PortfolioPage() {
 		<div className='bg-white px-4  pt-[70px] md:pt-[100px]'>
 			{/* Portfolio Section */}
 			<section className='container mx-auto'>
-				<h1 className='text-3xl text-center md:text-4xl font-bold text-[#1d1f1c]'>
+				<h1 className='text-3xl mb-6 text-center md:text-4xl font-bold text-[#1d1f1c]'>
 					Portfolio
 				</h1>
-				<div className='flex justify-end items-center mb-6'>
-					<Link
-						href='/portfolio'
-						className='flex items-center gap-1 text-[#1d1f1c] font-medium border rounded-lg px-4 py-2  hover:text-[#e1c789] transition-colors'
-					>
-						View All
-						<ArrowRight size={16} />
-					</Link>
-				</div>
 
 				<div className='flex flex-col gap-5'>
 					<div className='p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 flex flex-col md:flex-row items-center md:justify-between gap-6'>
@@ -42,6 +32,44 @@ export default function PortfolioPage() {
 						/>
 					</div>
 					<div className='p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 flex  flex-col-reverse md:flex-row items-center md:justify-between gap-6'>
+						<Compare
+							firstImage='/compare.png'
+							secondImage='/compare1.png'
+							firstImageClassName='object-cover object-left-top'
+							secondImageClassname='object-cover object-left-top'
+							className='h-[250px] w-full md:h-[500px] md:w-[700px]'
+							slideMode='hover'
+						/>
+						<div className='text-center md:text-left'>
+							<h2 className='font-bold text-[26px]'>
+								Bathroom Renovation
+							</h2>
+							<p className='font-[400] text-[17px] tracking-[0px]'>
+								We provide expert Home, Kitchen & Bathroom
+								Re-modeling services in London.
+							</p>
+						</div>
+					</div>
+					<div className='p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 flex flex-col md:flex-row items-center md:justify-between gap-6'>
+						<div className='text-center md:text-left'>
+							<h2 className='font-bold text-[26px]'>
+								Bathroom Renovation
+							</h2>
+							<p className='font-[400] text-[17px] tracking-[0px]'>
+								We provide expert Home, Kitchen & Bathroom
+								Re-modeling services in London.
+							</p>
+						</div>
+						<Compare
+							firstImage='/compare.png'
+							secondImage='/compare1.png'
+							firstImageClassName='object-cover object-left-top'
+							secondImageClassname='object-cover object-left-top'
+							className='h-[250px] w-full md:h-[500px] md:w-[700px]'
+							slideMode='hover'
+						/>
+					</div>
+					<div className='p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 flex flex-col-reverse md:flex-row items-center md:justify-between gap-6'>
 						<Compare
 							firstImage='/compare.png'
 							secondImage='/compare1.png'

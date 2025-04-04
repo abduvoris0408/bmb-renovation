@@ -25,13 +25,13 @@ export default function Home() {
 								<div className='border p-1 bg-white rounded-lg'>
 									<div className='flex flex-wrap '>
 										<Link
-											href='/services'
+											href='/#services'
 											className='bg-[#1d1f1c] text-white px-6 md:px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all text-sm md:text-base'
 										>
 											Our Services
 										</Link>
 										<Link
-											href='/locations'
+											href='/#locations'
 											className='bg-white text-[#1d1f1c] px-6 md:px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all text-sm md:text-base'
 										>
 											Locations

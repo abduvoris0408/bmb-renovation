@@ -1,22 +1,13 @@
-import { ArrowRight, ChevronRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function ServicesPage() {
 	return (
-		<section className='container mx-auto px-4  pt-[70px] md:pt-[100px]'>
-			<h1 className='text-3xl text-center md:text-4xl font-bold text-[#1d1f1c]'>
+		<section className='container mx-auto px-4  py-[70px] md:py-[100px]'>
+			<h1 className='text-3xl mb-6 text-center md:text-4xl font-bold text-[#1d1f1c]'>
 				Our Services
 			</h1>
-			<div className='flex justify-end items-center mb-6'>
-				<Link
-					href='/services'
-					className='flex items-center gap-1 text-[#1d1f1c] font-medium border rounded-lg px-4 py-2  hover:text-[#e1c789] transition-colors'
-				>
-					View All
-					<ArrowRight size={16} />
-				</Link>
-			</div>
 
 			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6'>
 				<ServiceCard
@@ -55,21 +46,49 @@ export default function ServicesPage() {
 					href='/services/painting-decorations'
 				/>
 				<ServiceCard
-					title='Tiling'
+					title='Kitchen Fitting'
 					image='/Service8.png'
 					href='/services/painting-decorations'
 				/>
 				<ServiceCard
-					title='General Handy Man work'
-					image='/Service9.png'
+					title='Tiling'
+					image='/Service11.png'
 					href='/services/painting-decorations'
-					className='sm:col-span-1 md:col-span-2'
 				/>
 				<ServiceCard
-					title='Carpentry'
-					image='/Service10.png'
+					title='Tiling'
+					image='/Service12.png'
 					href='/services/painting-decorations'
-					className='sm:col-span-1 md:col-span-2'
+				/>
+				<ServiceCard
+					title='Tiling'
+					image='/Service13.png'
+					href='/services/painting-decorations'
+				/>
+				<ServiceCard
+					title='Kitchen Fitting'
+					image='/Service14.png'
+					href='/services/painting-decorations'
+				/>
+				<ServiceCard
+					title='Tiling'
+					image='/Service15.png'
+					href='/services/painting-decorations'
+				/>
+				<ServiceCard
+					title='Tiling'
+					image='/Service16.png'
+					href='/services/painting-decorations'
+				/>
+				<ServiceCard
+					title='Tiling'
+					image='/Service17.png'
+					href='/services/painting-decorations'
+				/>
+				<ServiceCard
+					title='Kitchen Fitting'
+					image='/Service18.png'
+					href='/services/painting-decorations'
 				/>
 			</div>
 		</section>
