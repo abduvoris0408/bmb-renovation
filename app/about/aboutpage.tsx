@@ -2,12 +2,15 @@ import Image from 'next/image'
 
 export default function About() {
 	return (
-		<section className='container mx-auto px-4 py-8'>
+		<section className='container mx-auto px-4  pt-[70px] md:pt-[100px]'>
 			<h1 className='text-3xl md:text-4xl font-bold text-center text-[#1d1f1c] mb-12'>
 				About Us
 			</h1>
 
-			<div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16'>
+			<div
+				data-aos='zoom-in'
+				className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16'
+			>
 				<div className='bg-[#1b1d20] rounded-lg p-8 flex flex-col items-center justify-center'>
 					<div className='w-48 h-48 relative mb-6'>
 						<Image

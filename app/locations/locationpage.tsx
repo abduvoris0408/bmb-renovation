@@ -33,59 +33,57 @@ export default function LocationsPage() {
 		return null
 	}
 	return (
-		<main className='min-h-screen bg-white'>
-			<section className='py-8 px-4'>
-				<div className='container mx-auto max-w-6xl text-center'>
-					<h2 className='text-3xl font-bold text-[#1d1f1c] mb-4'>
-						Our Locations
-					</h2>
-					<p className='text-[#758195] mb-12'>
-						We have offices and teams all around the UK.
-					</p>
+		<section className='px-4  pt-[70px] md:pt-[100px]'>
+			<div className='container mx-auto  text-center'>
+				<h2 className='text-3xl font-bold text-[#1d1f1c] mb-4'>
+					Our Locations
+				</h2>
+				<p className='text-[#758195] mb-12'>
+					We have offices and teams all around the UK.
+				</p>
 
-					<main className='flex min-h-screen flex-col'>
-						<div className='bg-white p-4 shadow-sm border-b'>
-							<div className='flex items-center gap-2'>
-								<MapPin className='text-red-500' size={20} />
-								<h1 className='text-lg font-semibold'>
-									{coordinates.formatted}
-								</h1>
-							</div>
-							<p className='text-gray-600 text-sm ml-7'>
-								{locationName}
-							</p>
+				<div className='flex min-h-screen flex-col'>
+					<div className='bg-white p-4 shadow-sm border-b'>
+						<div className='flex items-center gap-2'>
+							<MapPin className='text-red-500' size={20} />
+							<h1 className='text-lg font-semibold'>
+								{coordinates.formatted}
+							</h1>
+						</div>
+						<p className='text-gray-600 text-sm ml-7'>
+							{locationName}
+						</p>
+					</div>
+
+					{/* Map container */}
+					<div className='relative flex-1'>
+						<MapComponent coordinates={coordinates} />
+
+						<div className='absolute top-4 right-4  bg-white rounded shadow-md'>
+							<a
+								href={`https://www.google.com/maps/search/?api=1&query=${coordinates.lat},${coordinates.lng}`}
+								target='_blank'
+								rel='noopener noreferrer'
+								className='text-blue-500 hover:text-blue-700 text-sm px-3 py-2 flex items-center'
+							>
+								View larger map
+							</a>
 						</div>
 
-						{/* Map container */}
-						<div className='relative flex-1'>
-							<MapComponent coordinates={coordinates} />
-
-							<div className='absolute top-4 right-4  bg-white rounded shadow-md'>
-								<a
-									href={`https://www.google.com/maps/search/?api=1&query=${coordinates.lat},${coordinates.lng}`}
-									target='_blank'
-									rel='noopener noreferrer'
-									className='text-blue-500 hover:text-blue-700 text-sm px-3 py-2 flex items-center'
-								>
-									View larger map
-								</a>
-							</div>
-
-							{/* Directions button */}
-							<div className='absolute top-4 right-40  bg-white rounded shadow-md'>
-								<Button
-									variant='ghost'
-									className='p-2 h-10 flex items-center gap-2 text-blue-500 hover:bg-gray-100'
-								>
-									<Navigation size={16} />
-									<span className='text-sm'>Directions</span>
-								</Button>
-							</div>
+						{/* Directions button */}
+						<div className='absolute top-4 right-40  bg-white rounded shadow-md'>
+							<Button
+								variant='ghost'
+								className='p-2 h-10 flex items-center gap-2 text-blue-500 hover:bg-gray-100'
+							>
+								<Navigation size={16} />
+								<span className='text-sm'>Directions</span>
+							</Button>
 						</div>
-					</main>
+					</div>
 				</div>
-			</section>
-		</main>
+			</div>
+		</section>
 	)
 }
 

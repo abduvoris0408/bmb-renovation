@@ -5,9 +5,9 @@ import Link from 'next/link'
 
 export default function PortfolioPage() {
 	return (
-		<main className='min-h-screen bg-white'>
+		<div className='bg-white px-4  pt-[70px] md:pt-[100px]'>
 			{/* Portfolio Section */}
-			<section className='container mx-auto px-4 py-8 md:py-8 '>
+			<section className='container mx-auto'>
 				<h1 className='text-3xl text-center md:text-4xl font-bold text-[#1d1f1c]'>
 					Portfolio
 				</h1>
@@ -122,7 +122,7 @@ export default function PortfolioPage() {
 
 			{/* Portfolio Banner */}
 
-			<section className='container mx-auto rounded-xl bg-[#1d1f1c] text-white px-6 py-12 md:px-10'>
+			<section className='container mx-auto rounded-xl bg-[#1d1f1c] text-white px-6 py-12 mt-5 md:px-10'>
 				<div className='flex flex-col md:flex-row items-center justify-between gap-6'>
 					<div className='text-center md:text-left'>
 						<h2 className='text-3xl md:text-4xl font-bold mb-3'>
@@ -149,7 +149,7 @@ export default function PortfolioPage() {
 					</div>
 				</div>
 			</section>
-		</main>
+		</div>
 	)
 }
 

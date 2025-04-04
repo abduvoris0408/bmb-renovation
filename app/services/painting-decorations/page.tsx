@@ -3,8 +3,7 @@ import Image from 'next/image'
 export default function PaintingDecorationsPage() {
 	return (
 		<main className='min-h-screen bg-white'>
-			{/* Service Gallery */}
-			<section className='container mx-auto px-4 py-8'>
+			<section className='container mx-auto px-4 py-[70px] md:py-[100px]'>
 				<div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
 					<div className='md:col-span-2'>
 						<div className='relative h-[200px] md:h-[400px] rounded-lg overflow-hidden'>

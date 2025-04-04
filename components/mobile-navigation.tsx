@@ -32,28 +32,32 @@
 // 				className='p-2 text-[#1d1f1c]'
 // 				aria-label={isOpen ? 'Close menu' : 'Open menu'}
 // 			>
-// 				{isOpen ? <X size={24} /> : <Menu size={24} />}
+// 				<Menu size={24} />
 // 			</button>
 
-// 			{isOpen && (
-// 				<div className='  z-50 bg-white'>
-// 					<div className='flex flex-col justify-between items-center p-4 border-b'>
-// 					<div className='flex items-center gap-2'>
-// 						<Link href={'/'}>
-// 							<div className='w-10 h-10 relative'>
-// 								<Image
-// 									src='/Logo.svg'
-// 									alt='BMB Renovation Logo'
-// 									width={40}
-// 									height={40}
-// 									className='object-contain'
-// 								/>
-// 							</div>
-// 						</Link>
-// 						<h1 className='text-[#1d1f1c] text-[21px] font-[450] tracking-tighter'>
-// 							BMB Renovation
-// 						</h1>
-// 					</div>
+// 			<div
+// 				className={`fixed top-0 left-0 z-20 h-screen w-[100%] bg-white shadow-lg transform ${
+// 					isOpen ? 'translate-x-0' : '-translate-x-full'
+// 				} transition-transform duration-300 ease-in-out z-[100]`}
+// 			>
+// 				<div className='flex flex-col h-full'>
+// 					<div className='flex justify-between items-center p-4 border-b'>
+// 						<div className='flex items-center gap-2'>
+// 							<Link href={'/'} onClick={toggleMenu}>
+// 								<div className='w-10 h-10 relative'>
+// 									<Image
+// 										src='/Logo.svg'
+// 										alt='BMB Renovation Logo'
+// 										width={40}
+// 										height={40}
+// 										className='object-contain'
+// 									/>
+// 								</div>
+// 							</Link>
+// 							<h1 className='text-[#1d1f1c] text-[21px] font-[450] tracking-tighter'>
+// 								BMB Renovation
+// 							</h1>
+// 						</div>
 // 						<button
 // 							onClick={toggleMenu}
 // 							className='p-2 text-[#1d1f1c]'
@@ -63,9 +67,9 @@
 // 						</button>
 // 					</div>
 
-// 					<nav className='p-4'>
+// 					<nav className='p-4 flex-1 overflow-y-auto'>
 // 						<ul className='space-y-4'>
-// 							<li>
+// 							<li className='border-b'>
 // 								<Link
 // 									href='/'
 // 									className={`block py-2 text-lg ${
@@ -78,7 +82,7 @@
 // 									Home
 // 								</Link>
 // 							</li>
-// 							<li>
+// 							<li className='border-b'>
 // 								<Link
 // 									href='/about'
 // 									className={`block py-2 text-lg ${
@@ -91,7 +95,7 @@
 // 									About Us
 // 								</Link>
 // 							</li>
-// 							<li>
+// 							<li className='border-b'>
 // 								<div className='flex justify-between items-center py-2'>
 // 									<Link
 // 										href='/services'
@@ -138,7 +142,7 @@
 // 										</li>
 // 										<li>
 // 											<Link
-// 												href='/services/bathroom-renovations'
+// 												href='/services/painting-decorations'
 // 												className='block py-1 text-[#758195]'
 // 												onClick={toggleMenu}
 // 											>
@@ -147,7 +151,7 @@
 // 										</li>
 // 										<li>
 // 											<Link
-// 												href='/services/house-renovation'
+// 												href='/services/painting-decorations'
 // 												className='block py-1 text-[#758195]'
 // 												onClick={toggleMenu}
 // 											>
@@ -156,7 +160,7 @@
 // 										</li>
 // 										<li>
 // 											<Link
-// 												href='/services/kitchen-fitting'
+// 												href='/services/painting-decorations'
 // 												className='block py-1 text-[#758195]'
 // 												onClick={toggleMenu}
 // 											>
@@ -165,7 +169,7 @@
 // 										</li>
 // 										<li>
 // 											<Link
-// 												href='/services/more'
+// 												href='/services'
 // 												className='block py-1 text-[#758195] font-medium'
 // 												onClick={toggleMenu}
 // 											>
@@ -175,7 +179,7 @@
 // 									</ul>
 // 								)}
 // 							</li>
-// 							<li>
+// 							<li className='border-b'>
 // 								<Link
 // 									href='/portfolio'
 // 									className={`block py-2 text-lg ${
@@ -188,7 +192,7 @@
 // 									Portfolio
 // 								</Link>
 // 							</li>
-// 							<li>
+// 							<li className='border-b'>
 // 								<Link
 // 									href='/locations'
 // 									className={`block py-2 text-lg ${
@@ -204,10 +208,10 @@
 // 						</ul>
 // 					</nav>
 
-// 					<div className='absolute bottom-0 left-0 right-0 p-4 border-t'>
+// 					<div className='p-4 border-t'>
 // 						<Link
 // 							href='/contact'
-// 							className='bg-[#1d1f1c] text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all'
+// 							className='bg-[#1d1f1c] text-[#e1c789] py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all'
 // 							onClick={toggleMenu}
 // 						>
 // 							<Phone size={18} />
@@ -215,7 +219,7 @@
 // 						</Link>
 // 					</div>
 // 				</div>
-// 			)}
+// 			</div>
 // 		</div>
 // 	)
 // }
@@ -293,9 +297,9 @@ export default function MobileNavigation() {
 						<ul className='space-y-4'>
 							<li className='border-b'>
 								<Link
-									href='/'
+									href='/#home'
 									className={`block py-2 text-lg ${
-										isActive('/')
+										isActive('/#home')
 											? 'text-[#1d1f1c] font-medium'
 											: 'text-[#758195]'
 									}`}
@@ -306,9 +310,9 @@ export default function MobileNavigation() {
 							</li>
 							<li className='border-b'>
 								<Link
-									href='/about'
+									href='/#about'
 									className={`block py-2 text-lg ${
-										isActive('/about')
+										isActive('/#about')
 											? 'text-[#1d1f1c] font-medium'
 											: 'text-[#758195]'
 									}`}
@@ -320,9 +324,9 @@ export default function MobileNavigation() {
 							<li className='border-b'>
 								<div className='flex justify-between items-center py-2'>
 									<Link
-										href='/services'
+										href='#services'
 										className={`text-lg ${
-											isActive('/services')
+											isActive('#services')
 												? 'text-[#1d1f1c] font-medium'
 												: 'text-[#758195]'
 										}`}
@@ -355,7 +359,7 @@ export default function MobileNavigation() {
 									<ul className='pl-4 mt-2 space-y-2 border-l-2 border-gray-100'>
 										<li>
 											<Link
-												href='/services/painting-decorations'
+												href='#painting-decorations'
 												className='block py-1 text-[#758195]'
 												onClick={toggleMenu}
 											>
@@ -364,7 +368,7 @@ export default function MobileNavigation() {
 										</li>
 										<li>
 											<Link
-												href='/services/painting-decorations'
+												href='#bathroom-renovations'
 												className='block py-1 text-[#758195]'
 												onClick={toggleMenu}
 											>
@@ -373,7 +377,7 @@ export default function MobileNavigation() {
 										</li>
 										<li>
 											<Link
-												href='/services/painting-decorations'
+												href='#house-renovation'
 												className='block py-1 text-[#758195]'
 												onClick={toggleMenu}
 											>
@@ -382,7 +386,7 @@ export default function MobileNavigation() {
 										</li>
 										<li>
 											<Link
-												href='/services/painting-decorations'
+												href='#kitchen-fitting'
 												className='block py-1 text-[#758195]'
 												onClick={toggleMenu}
 											>
@@ -391,7 +395,7 @@ export default function MobileNavigation() {
 										</li>
 										<li>
 											<Link
-												href='/services'
+												href='#all-services'
 												className='block py-1 text-[#758195] font-medium'
 												onClick={toggleMenu}
 											>
@@ -403,9 +407,9 @@ export default function MobileNavigation() {
 							</li>
 							<li className='border-b'>
 								<Link
-									href='/portfolio'
+									href='/#portfolio'
 									className={`block py-2 text-lg ${
-										isActive('/portfolio')
+										isActive('/#portfolio')
 											? 'text-[#1d1f1c] font-medium'
 											: 'text-[#758195]'
 									}`}
@@ -416,15 +420,15 @@ export default function MobileNavigation() {
 							</li>
 							<li className='border-b'>
 								<Link
-									href='/locations'
+									href='/#locations'
 									className={`block py-2 text-lg ${
-										isActive('/locations')
+										isActive('/#locations')
 											? 'text-[#1d1f1c] font-medium'
 											: 'text-[#758195]'
 									}`}
 									onClick={toggleMenu}
 								>
-									Our Locations
+									Our locations
 								</Link>
 							</li>
 						</ul>
@@ -432,8 +436,10 @@ export default function MobileNavigation() {
 
 					<div className='p-4 border-t'>
 						<Link
-							href='/contact'
-							className='bg-[#1d1f1c] text-[#e1c789] py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all'
+							href='#contact'
+							className={`bg-[#1d1f1c] text-[#e1c789] py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all ${isActive(
+								'/#locations'
+							)}`}
 							onClick={toggleMenu}
 						>
 							<Phone size={18} />

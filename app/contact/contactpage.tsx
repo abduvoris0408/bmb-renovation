@@ -21,11 +21,11 @@ export default function Contact() {
 	return (
 		<div>
 			{/* Contact Form Section */}
-			<section className='py-16 px-4'>
-				<div className='container mx-auto max-w-7xl'>
+			<section className='px-4  py-[30px] md:py-[60px]'>
+				<div className='container mx-auto '>
 					<div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
 						<div>
-							<h2 className='text-2xl font-bold text-[#1d1f1c] mb-3'>
+							<h2 className='text-3xl font-bold text-[#1d1f1c] mb-3'>
 								Contact us
 							</h2>
 							<p className='text-[#758195] mb-6'>
@@ -151,7 +151,7 @@ export default function Contact() {
 
 						<div className='hidden md:block'>
 							<Image
-								src='/placeholder.svg?height=600&width=500'
+								src='/contact.png'
 								alt='Customer service representative'
 								width={620}
 								height={720}

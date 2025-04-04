@@ -20,6 +20,7 @@ export default function ServicesPage() {
 
 			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6'>
 				<ServiceCard
+					data-aos='zoom-in'
 					title='Painting & Decorations'
 					image='/Service1.png'
 					href='/services/painting-decorations'
