@@ -1,143 +1,130 @@
 'use client'
-import { Button } from '@/components/ui/button'
-import { ArrowRight, MapPin, Navigation } from 'lucide-react'
-import dynamic from 'next/dynamic'
-import Link from 'next/link'
-import type React from 'react'
-import { useEffect, useState } from 'react'
+import Script from 'next/script'
+import { useEffect } from 'react'
 
-const MapComponent = dynamic(() => import('@/components/map-component'), {
-	ssr: false,
-	loading: () => (
-		<div className='h-[calc(100vh-80px)] w-full bg-gray-100 flex items-center justify-center'>
-			<p className='text-gray-500'>Loading map...</p>
-		</div>
-	),
-})
-export default function LocationsPage() {
-	const [isMounted, setIsMounted] = useState(false)
+const LondonMap = () => {
+	const locations = [
+		{ name: 'City of London', coordinates: [51.5155, -0.0922] },
+		{ name: 'Victoria', coordinates: [51.4966, -0.1448] },
+		{ name: 'Mill Hill', coordinates: [51.6152, -0.2356] },
+		{ name: 'Golders Green', coordinates: [51.5724, -0.1991] },
+		{ name: 'Barnet', coordinates: [51.6501, -0.2001] },
+		{ name: 'Camden', coordinates: [51.5391, -0.1426] },
+		{ name: 'Fulham', coordinates: [51.4779, -0.1956] },
+		{ name: 'Chelsea', coordinates: [51.4878, -0.169] },
+		{ name: 'Kensington', coordinates: [51.5015, -0.1932] },
+		{ name: 'Wandsworth', coordinates: [51.4571, -0.1927] },
+		{ name: 'Radlett', coordinates: [51.6827, -0.3169] },
+		{ name: 'St. Albans', coordinates: [51.7554, -0.3568] },
+		{ name: 'Harpenden', coordinates: [51.818, -0.3563] },
+		{ name: 'Hampstead', coordinates: [51.5559, -0.1762] },
+		{ name: 'Islington', coordinates: [51.5362, -0.1033] },
+		{ name: 'West London', coordinates: [51.505, -0.3] },
+		{ name: 'Ealing', coordinates: [51.5126, -0.3055] },
+		{ name: 'Essex', coordinates: [51.7343, 0.469] },
+		{ name: 'Loughton', coordinates: [51.6486, 0.0742] },
+		{ name: 'Chingford', coordinates: [51.6326, -0.0039] },
+		{ name: 'North London', coordinates: [51.5854, -0.1211] },
+	]
 
-	const coordinates = {
-		lat: 41.33205,
-		lng: 69.29172,
-		formatted: '41°19\'55.4"N 69°17\'30.2"E',
+	// Initialize the map after the API is loaded
+	const initMap = () => {
+		if (window.ymaps) {
+			window.ymaps.ready(() => {
+				// Create a map centered on London
+				const map = new window.ymaps.Map('map-container', {
+					center: [51.5074, -0.1278], // London center
+					zoom: 10,
+					controls: [
+						'zoomControl',
+						'typeSelector',
+						'fullscreenControl',
+					],
+				})
+
+				// Add markers for each location
+				locations.forEach(location => {
+					const placemark = new window.ymaps.Placemark(
+						location.coordinates,
+						{
+							hintContent: location.name,
+							balloonContent: `<strong>${location.name}</strong>`,
+						},
+						{
+							preset: 'islands#greenDotIconWithCaption',
+							iconCaptionMaxWidth: '200',
+						}
+					)
+
+					map.geoObjects.add(placemark)
+				})
+
+				// Create a clusterer for better performance with many points
+				const clusterer = new window.ymaps.Clusterer({
+					preset: 'islands#greenClusterIcons',
+					groupByCoordinates: false,
+					clusterDisableClickZoom: false,
+					clusterHideIconOnBalloonOpen: false,
+					geoObjectHideIconOnBalloonOpen: false,
+				})
+
+				// Add all placemarks to the clusterer
+				const placemarks = locations.map(location => {
+					return new window.ymaps.Placemark(
+						location.coordinates,
+						{
+							balloonContentHeader: location.name,
+						},
+						{
+							preset: 'islands#greenDotIconWithCaption',
+						}
+					)
+				})
+
+				clusterer.add(placemarks)
+				map.geoObjects.add(clusterer)
+
+				// Fit map to include all markers
+				map.setBounds(map.geoObjects.getBounds(), {
+					checkZoomRange: true,
+					zoomMargin: 35,
+				})
+			})
+		}
 	}
-
-	const locationName = 'CJSC-RMH Tashkent'
 
 	useEffect(() => {
-		setIsMounted(true)
+		if (window.ymaps) {
+			initMap()
+		}
 	}, [])
 
-	if (!isMounted) {
-		return null
-	}
 	return (
-		<section className='px-4  pt-[70px] md:pt-[100px]'>
-			<div className='container mx-auto  text-center'>
+		<div className='container mx-auto pt-[70px] md:pt-[100px]'>
+			<div className='text-center'>
 				<h2 className='text-3xl font-bold text-[#1d1f1c] mb-4'>
 					Our Locations
 				</h2>
 				<p className='text-[#758195] mb-12'>
 					We have offices and teams all around the UK.
 				</p>
-
-				<div className='flex min-h-screen flex-col'>
-					<div className='bg-white p-4 shadow-sm border-b'>
-						<div className='flex items-center gap-2'>
-							<MapPin className='text-red-500' size={20} />
-							<h1 className='text-lg font-semibold'>
-								{coordinates.formatted}
-							</h1>
-						</div>
-						<p className='text-gray-600 text-sm ml-7'>
-							{locationName}
-						</p>
-					</div>
-
-					{/* Map container */}
-					<div className='relative flex-1'>
-						<MapComponent coordinates={coordinates} />
-
-						<div className='absolute top-4 right-4  bg-white rounded shadow-md'>
-							<a
-								href={`https://www.google.com/maps/search/?api=1&query=${coordinates.lat},${coordinates.lng}`}
-								target='_blank'
-								rel='noopener noreferrer'
-								className='text-blue-500 hover:text-blue-700 text-sm px-3 py-2 flex items-center'
-							>
-								View larger map
-							</a>
-						</div>
-
-						{/* Directions button */}
-						<div className='absolute top-4 right-40  bg-white rounded shadow-md'>
-							<Button
-								variant='ghost'
-								className='p-2 h-10 flex items-center gap-2 text-blue-500 hover:bg-gray-100'
-							>
-								<Navigation size={16} />
-								<span className='text-sm'>Directions</span>
-							</Button>
-						</div>
-					</div>
-				</div>
 			</div>
-		</section>
-	)
-}
-
-interface NavItemProps {
-	href: string
-	children: React.ReactNode
-	isActive?: boolean
-}
-
-function NavItem({ href, children, isActive }: NavItemProps) {
-	return (
-		<Link
-			href={href}
-			className={`relative px-1 py-2 font-medium ${
-				isActive
-					? 'text-[#1d1f1c]'
-					: 'text-[#758195] hover:text-[#1d1f1c]'
-			} transition-colors`}
-		>
-			{children}
-			{isActive && (
-				<span className='absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#e1c789]'></span>
-			)}
-		</Link>
-	)
-}
-
-interface OfficeCardProps {
-	city: string
-	address: string
-	phone: string
-	email: string
-}
-
-function OfficeCard({ city, address, phone, email }: OfficeCardProps) {
-	return (
-		<div className='bg-white p-6 rounded-lg shadow-sm'>
-			<h3 className='text-xl font-semibold text-[#1d1f1c] mb-3'>
-				{city}
-			</h3>
-			<address className='not-italic text-[#758195] mb-4'>
-				{address}
-			</address>
-			<div className='space-y-2'>
-				<p className='text-[#758195]'>{phone}</p>
-				<p className='text-[#758195]'>{email}</p>
+			<div className='map-wrapper container mx-auto '>
+				<Script
+					src='https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=en_US'
+					onLoad={initMap}
+				/>
+				<div
+					id='map-container'
+					style={{
+						width: '100%',
+						height: '600px',
+						borderRadius: '8px',
+					}}
+				></div>
 			</div>
-			<Link
-				href={`/contact?location=${city.toLowerCase()}`}
-				className='mt-4 inline-flex items-center text-[#1d1f1c] font-medium hover:text-[#e1c789] transition-colors'
-			>
-				Contact this office
-				<ArrowRight size={16} className='ml-1' />
-			</Link>
 		</div>
 	)
 }
+
+export default LondonMap
