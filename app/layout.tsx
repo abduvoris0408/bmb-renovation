@@ -1,3 +1,4 @@
+import Seo from '@/layout/seo/seo'
 import type { Metadata } from 'next'
 import { Inter, Roboto } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
@@ -36,10 +37,12 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={inter.className}>
-				<NextTopLoader />
-				<Navbar />
-				{children}
-				<Footer />
+				<Seo>
+					<NextTopLoader />
+					<Navbar />
+					{children}
+					<Footer />
+				</Seo>
 			</body>
 		</html>
 	)

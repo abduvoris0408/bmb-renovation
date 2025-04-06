@@ -1,7 +1,10 @@
 import { ChevronRight } from 'lucide-react'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-
+export const metadata: Metadata = {
+	title: 'Our Services',
+}
 export default function ServicesPage() {
 	return (
 		<section className='container mx-auto px-4  py-[70px] md:py-[100px]'>

@@ -1,5 +1,8 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
-
+export const metadata: Metadata = {
+	title: 'Biz haqimizda',
+}
 export default function About() {
 	return (
 		<section className='container mx-auto px-4  pt-[70px] md:pt-[100px]'>

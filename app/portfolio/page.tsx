@@ -1,11 +1,13 @@
 import { Compare } from '@/components/ui/compare'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-
+export const metadata: Metadata = {
+	title: 'Our Portfolio',
+}
 export default function PortfolioPage() {
 	return (
 		<div className='bg-white px-4  pt-[70px] md:pt-[100px]'>
-			{/* Portfolio Section */}
 			<section className='container mx-auto'>
 				<h1 className='text-3xl mb-6 text-center md:text-4xl font-bold text-[#1d1f1c]'>
 					Portfolio
