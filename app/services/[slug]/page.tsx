@@ -1,14 +1,21 @@
+import { servicesData } from '@/lib/serviceData'
 import Image from 'next/image'
+type Props = {
+	params: {
+		slug: string
+	}
+}
+export default function ServiceDetailPage({ params }: Props) {
+	const service = servicesData.find(s => s.slug === params.slug)
 
-export default function PaintingDecorationsPage() {
 	return (
 		<main className='min-h-screen bg-white'>
-			<section className='container mx-auto px-4 py-[70px] md:py-[100px]'>
+			<section className='container mx-auto px-4 pt-[70px] md:pt-[100px]'>
 				<div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
 					<div className='md:col-span-2'>
 						<div className='relative h-[200px] md:h-[400px] rounded-lg overflow-hidden'>
 							<Image
-								src='/painting.png'
+								src={service?.images[0]}
 								alt='Modern living room with gray sofa and orange accents'
 								fill
 								className='object-cover'
@@ -18,7 +25,7 @@ export default function PaintingDecorationsPage() {
 					<div className='grid grid-cols-2 md:grid-cols-1 gap-4'>
 						<div className='relative h-[100px] md:h-[190px] rounded-lg overflow-hidden'>
 							<Image
-								src='/painting1.png'
+								src={service?.images[1]}
 								alt='Elegant living room design'
 								fill
 								className='object-cover'
@@ -26,7 +33,7 @@ export default function PaintingDecorationsPage() {
 						</div>
 						<div className='relative h-[100px] md:h-[190px]  rounded-lg overflow-hidden'>
 							<Image
-								src='/painting2.png'
+								src={service?.images[2]}
 								alt='Modern interior with colorful artwork'
 								fill
 								className='object-cover'
@@ -39,17 +46,11 @@ export default function PaintingDecorationsPage() {
 			{/* Service Description */}
 			<section className='container mx-auto px-4 py-8'>
 				<h1 className='text-3xl md:text-4xl font-bold text-[#1d1f1c] mb-4'>
-					Painting & Decorations
+					{service?.title}{' '}
 				</h1>
-				<p className='text-[#758195] mb-8 max-w-4xl'>
-					Painting & Decorations" turli binolar, inshootlar va
-					interyerlarni estetik va funksional jihatdan yaxshilashga
-					qaratilgan amaliyotdir. Bu jarayon turli materiallar,
-					usullar va vositalar yordamida amalga oshiriladi. Quyida
-					mazkur soha haqida batafsil ma’lumot keltiriladi:
-				</p>
+				{service?.description}
 
-				<div className='max-w-4xl'>
+				{/* <div className='max-w-4xl'>
 					<h2 className='text-2xl font-bold text-[#1d1f1c] mb-4'>
 						Painting
 					</h2>
@@ -184,7 +185,7 @@ export default function PaintingDecorationsPage() {
 							frames).
 						</li>
 					</ul>
-				</div>
+				</div> */}
 			</section>
 		</main>
 	)

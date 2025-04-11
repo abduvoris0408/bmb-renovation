@@ -21,77 +21,77 @@ export default function ServicesPage() {
 				<ServiceCard
 					title='Bathroom Renovations'
 					image='/Service2.png'
-					href='/services/painting-decorations'
+					href='/services/bathroom-renovations'
 				/>
 				<ServiceCard
 					title='House Renovation'
 					image='/Service3.png'
-					href='/services/painting-decorations'
+					href='/services/house-renovations'
 				/>
 				<ServiceCard
 					title='Kitchen Fitting'
 					image='/Service4.png'
-					href='/services/painting-decorations'
+					href='/services/kitchen-fitting'
 				/>
 				<ServiceCard
 					title='Flooring'
 					image='/Service5.png'
-					href='/services/painting-decorations'
+					href='/services/flooring'
 				/>
 				<ServiceCard
 					title='House Extension'
 					image='/Service6.png'
-					href='/services/painting-decorations'
+					href='/services/house-extension'
 				/>
 				<ServiceCard
 					title='Loft Conversion'
 					image='/Service7.png'
-					href='/services/painting-decorations'
+					href='/services/loft-conversion'
 				/>
 				<ServiceCard
-					title='Kitchen Fitting'
+					title='Tilling'
 					image='/Service8.png'
-					href='/services/painting-decorations'
+					href='/services/tilling'
 				/>
 				<ServiceCard
-					title='Tiling'
+					title='Heat supply'
 					image='/Service11.png'
-					href='/services/painting-decorations'
+					href='/services/heat-supply'
 				/>
 				<ServiceCard
-					title='Tiling'
+					title='Electrical wiring installation'
 					image='/Service12.png'
-					href='/services/painting-decorations'
+					href='/services/electrical-wiring-installation'
 				/>
 				<ServiceCard
-					title='Tiling'
+					title='Wall painting'
 					image='/Service13.png'
-					href='/services/painting-decorations'
+					href='/services/wall-painting'
 				/>
 				<ServiceCard
-					title='Kitchen Fitting'
+					title='Carpentry'
 					image='/Service14.png'
-					href='/services/painting-decorations'
+					href='/services/carpentry'
 				/>
 				<ServiceCard
-					title='Tiling'
+					title='Window cleaning'
 					image='/Service15.png'
-					href='/services/painting-decorations'
+					href='/services/window-cleaning'
 				/>
 				<ServiceCard
-					title='Tiling'
+					title='General Handy Man work'
 					image='/Service16.png'
-					href='/services/painting-decorations'
+					href='/services/general-handy-man-work'
 				/>
 				<ServiceCard
-					title='Tiling'
+					title='Dust removal'
 					image='/Service17.png'
-					href='/services/painting-decorations'
+					href='/services/dust-removal'
 				/>
 				<ServiceCard
-					title='Kitchen Fitting'
+					title='Wall-painting'
 					image='/Service18.png'
-					href='/services/painting-decorations'
+					href='/services/wall-painting'
 				/>
 			</div>
 		</section>

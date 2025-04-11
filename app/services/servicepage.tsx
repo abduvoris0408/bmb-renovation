@@ -20,7 +20,6 @@ export default function ServicesPage() {
 
 			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6'>
 				<ServiceCard
-					data-aos='zoom-in'
 					title='Painting & Decorations'
 					image='/Service1.png'
 					href='/services/painting-decorations'
@@ -28,48 +27,48 @@ export default function ServicesPage() {
 				<ServiceCard
 					title='Bathroom Renovations'
 					image='/Service2.png'
-					href='/services/painting-decorations'
+					href='/services/bathroom-renovations'
 				/>
 				<ServiceCard
 					title='House Renovation'
 					image='/Service3.png'
-					href='/services/painting-decorations'
+					href='/services/house-renovations'
 				/>
 				<ServiceCard
 					title='Kitchen Fitting'
 					image='/Service4.png'
-					href='/services/painting-decorations'
+					href='/services/kitchen-fitting'
 				/>
 				<ServiceCard
 					title='Flooring'
 					image='/Service5.png'
-					href='/services/painting-decorations'
+					href='/services/flooring'
 				/>
 				<ServiceCard
 					title='House Extension'
 					image='/Service6.png'
-					href='/services/painting-decorations'
+					href='/services/house-extension'
 				/>
 				<ServiceCard
 					title='Loft Conversion'
 					image='/Service7.png'
-					href='/services/painting-decorations'
+					href='/services/loft-conversion'
 				/>
 				<ServiceCard
 					title='Tiling'
 					image='/Service8.png'
-					href='/services/painting-decorations'
+					href='/services/tiling'
 				/>
 				<ServiceCard
 					title='General Handy Man work'
 					image='/Service9.png'
-					href='/services/painting-decorations'
+					href='/services/general-handy-man-work'
 					className='sm:col-span-1 md:col-span-2'
 				/>
 				<ServiceCard
 					title='Carpentry'
 					image='/Service10.png'
-					href='/services/painting-decorations'
+					href='/services/carpentry'
 					className='sm:col-span-1 md:col-span-2'
 				/>
 			</div>

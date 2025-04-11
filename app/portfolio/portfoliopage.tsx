@@ -25,7 +25,7 @@ export default function PortfolioPage() {
 					<div className='p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 flex flex-col md:flex-row items-center md:justify-between gap-6'>
 						<div className='text-center md:text-left'>
 							<h2 className='font-bold text-[26px]'>
-								Bathroom Renovation
+								BMB Renovation
 							</h2>
 							<p className='font-[400] text-[17px] tracking-[0px]'>
 								We provide expert Home, Kitchen & Bathroom
@@ -33,26 +33,26 @@ export default function PortfolioPage() {
 							</p>
 						</div>
 						<Compare
-							firstImage='/compare.png'
-							secondImage='/compare1.png'
+							firstImage='/compare11.png'
+							secondImage='/compare22.png'
 							firstImageClassName='object-cover object-left-top'
 							secondImageClassname='object-cover object-left-top'
-							className='h-[250px] w-full md:h-[500px] md:w-[700px]'
+							className='h-[350px] w-full md:h-[700px] md:w-[700px]'
 							slideMode='hover'
 						/>
 					</div>
 					<div className='p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 flex  flex-col-reverse md:flex-row items-center md:justify-between gap-6'>
 						<Compare
-							firstImage='/compare.png'
-							secondImage='/compare1.png'
+							firstImage='/compare3.png'
+							secondImage='/compare33.png'
 							firstImageClassName='object-cover object-left-top'
 							secondImageClassname='object-cover object-left-top'
-							className='h-[250px] w-full md:h-[500px] md:w-[700px]'
+							className='h-[350px] w-full md:h-[700px] md:w-[700px]'
 							slideMode='hover'
 						/>
 						<div className='text-center md:text-left'>
 							<h2 className='font-bold text-[26px]'>
-								Bathroom Renovation
+								BMB Renovation
 							</h2>
 							<p className='font-[400] text-[17px] tracking-[0px]'>
 								We provide expert Home, Kitchen & Bathroom
@@ -63,7 +63,7 @@ export default function PortfolioPage() {
 					<div className='p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 flex flex-col md:flex-row items-center md:justify-between gap-6'>
 						<div className='text-center md:text-left'>
 							<h2 className='font-bold text-[26px]'>
-								Bathroom Renovation
+								BMB Renovation
 							</h2>
 							<p className='font-[400] text-[17px] tracking-[0px]'>
 								We provide expert Home, Kitchen & Bathroom
@@ -71,11 +71,11 @@ export default function PortfolioPage() {
 							</p>
 						</div>
 						<Compare
-							firstImage='/compare.png'
-							secondImage='/compare1.png'
+							firstImage='/compare4.png'
+							secondImage='/compare44.png'
 							firstImageClassName='object-cover object-left-top'
 							secondImageClassname='object-cover object-left-top'
-							className='h-[250px] w-full md:h-[500px] md:w-[700px]'
+							className='h-[350px] w-full md:h-[700px] md:w-[700px]'
 							slideMode='hover'
 						/>
 					</div>
