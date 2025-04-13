@@ -359,7 +359,7 @@ export default function MobileNavigation() {
 									<ul className='pl-4 mt-2 space-y-2 border-l-2 border-gray-100'>
 										<li>
 											<Link
-												href='#painting-decorations'
+												href='/services/painting-decorations'
 												className='block py-1 text-[#758195]'
 												onClick={toggleMenu}
 											>
@@ -368,7 +368,7 @@ export default function MobileNavigation() {
 										</li>
 										<li>
 											<Link
-												href='#bathroom-renovations'
+												href='/services/bathroom-renovations'
 												className='block py-1 text-[#758195]'
 												onClick={toggleMenu}
 											>
@@ -377,7 +377,7 @@ export default function MobileNavigation() {
 										</li>
 										<li>
 											<Link
-												href='#house-renovation'
+												href='/services/house-renovations'
 												className='block py-1 text-[#758195]'
 												onClick={toggleMenu}
 											>
@@ -386,7 +386,7 @@ export default function MobileNavigation() {
 										</li>
 										<li>
 											<Link
-												href='#kitchen-fitting'
+												href='/services/kitchen-fitting'
 												className='block py-1 text-[#758195]'
 												onClick={toggleMenu}
 											>
@@ -395,7 +395,7 @@ export default function MobileNavigation() {
 										</li>
 										<li>
 											<Link
-												href='#all-services'
+												href='/services'
 												className='block py-1 text-[#758195] font-medium'
 												onClick={toggleMenu}
 											>
