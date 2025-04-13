@@ -1,3 +1,4 @@
+'use client'
 import { Compare } from '@/components/ui/compare'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
@@ -96,18 +97,42 @@ export default function PortfolioPage() {
 						</p>
 					</div>
 					<div className='flex flex-wrap justify-center md:justify-start gap-3'>
-						<Link
-							href='/contact'
+						<button
+							onClick={() => {
+								const id = 'contact'
+								const section = document.getElementById(id)
+								if (section) {
+									section.scrollIntoView({
+										behavior: 'smooth',
+									})
+
+									setTimeout(() => {
+										window.location.hash = `#${id}`
+									}, 300)
+								}
+							}}
 							className='bg-[#e1c789] text-[#1d1f1c] px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all'
 						>
 							Get Started
-						</Link>
-						<Link
-							href='/about'
+						</button>
+
+						<button
+							onClick={() => {
+								const id = 'about'
+								const section = document.getElementById(id)
+								if (section) {
+									section.scrollIntoView({
+										behavior: 'smooth',
+									})
+									setTimeout(() => {
+										window.location.hash = `#${id}`
+									}, 300)
+								}
+							}}
 							className='bg-transparent border border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition-all'
 						>
 							Learn More
-						</Link>
+						</button>
 					</div>
 				</div>
 			</section>

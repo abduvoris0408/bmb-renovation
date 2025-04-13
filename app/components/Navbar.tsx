@@ -161,6 +161,27 @@ export default function Navbar() {
 
 	React.useEffect(() => {
 		if (typeof window !== 'undefined') {
+			const handleHashChange = () => {
+				const hash = window.location.hash || '#hero'
+				setActiveNav(hash)
+			}
+			window.addEventListener('hashchange', handleHashChange)
+
+			// Sahifaga kirishda avtomatik `#hero` ga o'tish
+			if (window.location.hash === '') {
+				window.location.hash = '#hero'
+			}
+
+			handleHashChange()
+
+			return () => {
+				window.removeEventListener('hashchange', handleHashChange)
+			}
+		}
+	}, [])
+
+	React.useEffect(() => {
+		if (typeof window !== 'undefined') {
 			if (isHomePage) {
 				const currentHash = window.location.hash || '#hero'
 				setActiveNav(currentHash)

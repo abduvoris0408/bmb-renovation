@@ -111,36 +111,6 @@ export default function PortfolioPage() {
 					</div>
 				</div>
 			</section>
-
-			{/* Portfolio Banner */}
-
-			<section className='container mx-auto rounded-xl bg-[#1d1f1c] text-white px-6 py-12 mt-5 md:px-10'>
-				<div className='flex flex-col md:flex-row items-center justify-between gap-6'>
-					<div className='text-center md:text-left'>
-						<h2 className='text-3xl md:text-4xl font-bold mb-3'>
-							The premier renovation service across the UK.
-						</h2>
-						<p className='text-gray-300 mb-6'>
-							BMB is a trusted renovation company. We deliver
-							exceptional quality and service nationwide.
-						</p>
-					</div>
-					<div className='flex flex-wrap justify-center md:justify-start gap-3'>
-						<Link
-							href='/contact'
-							className='bg-[#e1c789] text-[#1d1f1c] px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all'
-						>
-							Get Started
-						</Link>
-						<Link
-							href='/about'
-							className='bg-transparent border border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition-all'
-						>
-							Learn More
-						</Link>
-					</div>
-				</div>
-			</section>
 		</div>
 	)
 }
